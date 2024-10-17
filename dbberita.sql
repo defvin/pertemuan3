@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 17, 2024 at 02:54 AM
+-- Generation Time: Oct 17, 2024 at 03:14 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.8
 
@@ -20,6 +20,23 @@ SET time_zone = "+00:00";
 --
 -- Database: `dbberita`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `berita`
+--
+
+CREATE TABLE `berita` (
+  `id_berita` int(11) NOT NULL,
+  `waktu_simpan` date NOT NULL,
+  `judul_id` varchar(255) NOT NULL,
+  `judul_en` varchar(255) NOT NULL,
+  `isi_id` text NOT NULL,
+  `isi_en` text NOT NULL,
+  `nama_file` varchar(255) NOT NULL,
+  `dihapus` enum('Y','T') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -47,6 +64,12 @@ INSERT INTO `login` (`id_login`, `nama`, `username`, `password`) VALUES
 --
 
 --
+-- Indexes for table `berita`
+--
+ALTER TABLE `berita`
+  ADD PRIMARY KEY (`id_berita`);
+
+--
 -- Indexes for table `login`
 --
 ALTER TABLE `login`
@@ -55,6 +78,12 @@ ALTER TABLE `login`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `berita`
+--
+ALTER TABLE `berita`
+  MODIFY `id_berita` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `login`
